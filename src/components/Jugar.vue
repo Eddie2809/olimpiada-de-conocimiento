@@ -1,22 +1,36 @@
 <script>
-    export default{
-        data(){
+    import Bienvenida from './game_components/Bienvenida.vue'
+    import InterfazPreguntas from './game_components/InterfazPreguntas.vue'
+    import PresentacionEquipos from './game_components/PresentacionEquipos.vue'
+    import PuntajeFinal from './game_components/PuntajeFinal.vue'
 
+    export default{
+        components: {
+            Bienvenida,
+            InterfazPreguntas,
+            PresentacionEquipos,
+            PuntajeFinal
         },
-        props: ['match'],
+        data(){
+            return{
+                puntajes: [0,0],
+                estadoDelJuego: "jugando"
+            }
+        },
+        props: ['preguntas','equipos','ronda'],
         methods: {
-            async fetchPost(route,body){
-                fetch()
+            keyEvent(){
+                console.log("uwu")
             }
         }
     }
 </script>
 
 <template>
-    <div class="Game">
-        <div class="welcomeMsg" @keypress.enter="changeInnerIf('teams')">
-            <h2 class="subtitle">Bienvenido a la</h2>
-            <h1 class="title">Olimpiada de Conocimiento</h1>
-        </div>
+    <div class="Game" @click="this.keyEvent()">
+        <Bienvenida v-if="estadoDelJuego === 'bienvenida'"/>
+        <PresentacionEquipos :equipos="equipos" v-if="estadoDelJuego === 'presentacionEquipos'"/>
+        <InterfazPreguntas :puntajes="this.puntajes" :preguntas="preguntas" :equipos="equipos" v-if="estadoDelJuego === 'jugando'"/>
+        <PuntajeFinal :equipos="equipos" :puntajes="this.puntajes" v-if="estadoDelJuego === 'finalizado'"/>
     </div>
 </template>

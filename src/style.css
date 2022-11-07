@@ -45,6 +45,70 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 30px;
+}
+
+.Game .card {
+  background-color: #1811a7;
+  background: -webkit-gradient(linear, left top, left bottom, from(#1811a7), to(#261bf7));
+  background: linear-gradient(180deg, #1811a7, #261bf7);
+  color: white;
+  padding: 20px;
+  border: 5px solid orange;
+  font-family: 'rosario';
+  text-transform: uppercase;
+  border-radius: 15px;
+  font-size: 2rem;
+}
+
+.Game .interfazPregunta {
+  width: 100%;
+}
+
+.Game .interfazPregunta .Puntajes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: 'rosario';
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.Game .interfazPregunta .Puntajes .equipo {
+  color: yellow;
+}
+
+.Game .interfazPregunta .Puntajes .puntaje {
+  color: white;
+}
+
+.Game .interfazPregunta .int-preg-mid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.Game .interfazPregunta .Pregunta {
+  width: 80%;
+}
+
+.Game .interfazPregunta .Tiempo {
+  width: 20%;
+  background-color: black;
+}
+
+.Game .interfazPregunta .Opciones .opcion {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .Game .welcomeMsg {
@@ -104,6 +168,10 @@ body {
 * {
   margin: 0;
   padding: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
